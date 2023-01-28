@@ -1,7 +1,9 @@
+import { StyleGlobals } from '@/styled/globals/globals';
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components';
 
 import { Box } from '../../styled/box/box';
+import { Nav } from '../nav/Nav';
 
 interface Props {
     children: ReactNode;
@@ -10,16 +12,18 @@ interface Props {
 
 const LayoutPage: FC<Props> = ({ children }) => {
     return (
-        <Box background='hsl(217, 28%, 15%)'>
-            <header>
-                
-            </header>
-            <main>
-                { children }
-            </main>
-            <footer>
-            </footer>
-        </Box>
+        <StyleGlobals>
+            <Box background='hsl(217, 28%, 15%)' width='100%'>
+                <header>
+                    <Nav />
+                </header>
+                <main>
+                    { children }
+                </main>
+                <footer>
+                </footer>
+            </Box>
+        </StyleGlobals>
     )
 }
 
