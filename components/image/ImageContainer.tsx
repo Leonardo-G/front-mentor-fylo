@@ -8,17 +8,22 @@ interface Props {
     width?: string;
     src: string;
     alt?: string;
+    responsiveXS?: {};
 }
 
 const BoxContainer = styled.div`
     position: relative;
-    height: ${ ({ height }: { height?: string, width?: string }) => height ? height : "auto" };
+    height: ${ ({ height }: { height?: string, width?: string, xs?: {} }) => height ? height : "auto" };
     width: ${ ({ width }) => width ? width : "fit-content" };
+
+    @media (max-width: 480px){
+        ${ ({ xs }) => xs ? xs : "" };
+    }
 `
 
-export const ImageContainer: FC<Props> = ({ height, width, src, alt }) => {
+export const ImageContainer: FC<Props> = ({ height, width, src, alt, responsiveXS }) => {
     return (
-        <BoxContainer height={ height } width={ width }>
+        <BoxContainer height={ height } width={ width } xs={ responsiveXS }>
             <Image 
                 src={ src }
                 alt={ alt || "Imagen" }

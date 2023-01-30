@@ -7,7 +7,7 @@ html{
     box-sizing: border-box;
 }
 
-p {
+p, h1 {
     color: #fff;
     font-size: 14px;
 }

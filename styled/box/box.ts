@@ -4,10 +4,23 @@ import styled from "styled-components";
 //ESTILO "BOX": 
 //Estilo para definir el color de fondo, padding, margin, heigth and width;
 export const Box = styled.div`
-    background: ${ ({ background }: { background?: string, padding?: string, height?: string, width?: string }) => background ? background : "transparent" };
+    background: ${ ({ background }: { 
+        xm?: {};
+        background?: string; 
+        padding?: string; 
+        height?: string;
+        width?: string 
+        mt?: number;                 //MARGIN-TOP
+        center?: boolean;
+    }) => background ? background : "transparent" };
+    margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
-    height: ${ ({ height }) => height ? height : "fit-content" };
-    width: ${ ({ width }) => width ? width : "fit-content"};
+    height: ${ ({ height }) => height ? height : "100%" };
+    width: ${ ({ width }) => width ? width : "100%"};
+    
+    @media (max-width: 720px){
+        ${ ({ xm }) => xm ? xm : "" };
+    }
 `
 
 //ESTILO FLEX;
