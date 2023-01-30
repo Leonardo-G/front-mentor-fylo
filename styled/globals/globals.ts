@@ -8,3 +8,14 @@ export const StyleGlobals = styled.div`
         margin: 0 auto;
     }
 `
+
+//Estilo SECTION: Solamente para separar el contenido
+export const Section = styled.section`
+    position: relative;
+    background: ${ ({ background }: { background?: string }) => background ? background : "transparent" };
+    padding: 150px 0;
+
+    @media (max-width: 480px){
+        padding: 50px 0;
+    }
+`

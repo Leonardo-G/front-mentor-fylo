@@ -6,12 +6,14 @@ import styled from "styled-components";
 export const Box = styled.div`
     background: ${ ({ background }: { 
         xm?: {};
+        xs?: {};
         background?: string; 
         padding?: string; 
         height?: string;
         width?: string 
-        mt?: number;                 //MARGIN-TOP
-        center?: boolean;
+        mt?: number;               //MARGIN-TOP
+        mx?: number;               
+        center?: boolean;          
     }) => background ? background : "transparent" };
     margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
@@ -21,6 +23,10 @@ export const Box = styled.div`
     @media (max-width: 720px){
         ${ ({ xm }) => xm ? xm : "" };
     }
+    
+    @media (max-width: 480px){
+        ${ ({ xs }) => xs ? xs : "" };
+    }
 `
 
 //ESTILO FLEX;
@@ -29,10 +35,14 @@ export const Flex = styled.div`
     display: flex;
     flex-direction: ${ ({ direction }: { 
         direction?: "column" | "row"; 
+        directionResponsive?: boolean;
         rowGap?: number; 
         columnGap?: number;
+        rowGapXM?: number;
+        columnGapXM?: number;
+        columnGapXS?: number;
         gap?: number;
-        justifyContent?: "space-between" | "space-around";
+        justifyContent?: "space-between" | "space-around" | "center";
         alignItems?: "center";
         width?: string;
     }) => direction ? "column" : "row" };
@@ -42,4 +52,14 @@ export const Flex = styled.div`
     align-items: ${ ({ alignItems }) => alignItems ? alignItems : "none" };
     width: ${ ({ width }) => width ? width : "fit-content" };
     height: 100%;
+
+    @media (max-width: 720px){
+        row-gap: ${ ({ rowGapXM, rowGap, gap }) => rowGapXM ? `${ rowGapXM }px` : gap ? `${ gap }px` : rowGap ? `${ rowGap }px` : "0px" };
+        column-gap: ${ ({ columnGapXM, columnGap, gap }) => columnGapXM ? `${ columnGapXM }px` : gap ? `${ gap }px` : columnGap ? `${ columnGap }px` : "0px" };
+    }
+
+    @media (max-width: 480px){
+        flex-direction: ${ ({ directionResponsive, direction }) => directionResponsive ? "column" : direction ? direction : "row" };
+        column-gap: ${ ({ columnGapXS, columnGapXM, columnGap, gap }) => columnGapXS ? `${ columnGapXS }px` : columnGapXM ? `${ columnGapXM }px` : gap ? `${ gap }px` : columnGap ? `${ columnGap }px` : "0px" };
+    }
 `
