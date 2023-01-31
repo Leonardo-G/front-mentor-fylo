@@ -16,7 +16,7 @@ interface Props {
 const BoxContainer = styled.div`
     position: relative;
     height: ${ ({ height }: { height?: string, width?: string, zIndex?: number; xs?: {} }) => height ? height : "auto" };
-    width: ${ ({ width }) => width ? width : "fit-content" };
+    width: ${ ({ width }) => width ? width : "100%" };
     z-index: ${ ({ zIndex }) => zIndex && zIndex };
     @media (max-width: 480px){
         ${ ({ xs }) => xs ? xs : "" };
@@ -36,7 +36,7 @@ export const ImageContainer: FC<Props> = ({ height, width, src, alt, responsiveX
                 alt={ alt || "Imagen" }
                 fill
                 style={{
-                    objectFit: cover ? "fill" : "contain",
+                    objectFit: cover ? "cover" : "contain",
                 }}
             />
         </BoxContainer>

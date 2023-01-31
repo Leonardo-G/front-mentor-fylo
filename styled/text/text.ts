@@ -7,12 +7,12 @@ export const Text = styled.p`
         center?: boolean;  
         sizeXM?: number;  
         sizeXS?: number;
-    }) => size ? `${ size }px` : "14px" };
+    }) => size ? `${ size }px` : "16px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
     font-family: ${ ({ font }) => `${font ? font : "Open Sans"}, sans-serif` };
     cursor: ${ ({ pointer }) => pointer ? "pointer" : "text" };
     text-align: ${ ({ center }) => center ? "center" : "none" };
-
+    z-index: 1;
     @media (max-width: 720px){
         ${ ({ xm }) => xm ? xm : "" };
         font-size: ${ ({ sizeXM, size }) => sizeXM ? `${sizeXM}px` : size ? `${size}px` : "14px" };
@@ -64,4 +64,8 @@ export const Title = styled.h3`
     font-weight: 700;
     text-align: ${ ({ center }) => center ? "center" : "auto" };
     font-family: "Raleway", sans-serif;
+
+    @media (max-width: 720px){
+        font-size: ${ ({ size, sizeXM }) => sizeXM ? `${sizeXM}px` : size ? `${size}px` : "20px" }
+    }
 `

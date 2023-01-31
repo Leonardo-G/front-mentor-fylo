@@ -13,7 +13,8 @@ export const Box = styled.div`
         width?: string 
         mt?: number;               //MARGIN-TOP
         mx?: number;               
-        center?: boolean;          
+        center?: boolean; 
+        widthResponsive?: boolean;         
     }) => background ? background : "transparent" };
     margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
@@ -26,6 +27,7 @@ export const Box = styled.div`
     
     @media (max-width: 480px){
         ${ ({ xs }) => xs ? xs : "" };
+        width: ${ ({ widthResponsive, width }) => widthResponsive ? "100%" : width ? width : "fit-content" };
     }
 `
 
@@ -37,8 +39,8 @@ export const Flex = styled.div`
         direction?: "column" | "row"; 
         directionResponsive?: boolean;
         rowGap?: number; 
-        columnGap?: number;
         rowGapXM?: number;
+        columnGap?: number;
         columnGapXM?: number;
         columnGapXS?: number;
         gap?: number;

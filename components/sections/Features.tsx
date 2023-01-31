@@ -9,7 +9,7 @@ import { Section } from '@/styled/globals/globals'
 export const Features = () => {
     return (
         <Section background='hsl(218, 28%, 13%)'>
-            <Box width="75%" center>
+            <Box width="60%" center>
                 <Flex 
                     justifyContent='center' 
                     columnGap={ 200 } 
@@ -39,7 +39,7 @@ export const Features = () => {
                     </Flex>
                 </Flex>
             </Box>
-            <Box mt={ 100 } width="70%" center>
+            <Box mt={ 100 } width="60%" center>
                 <Flex 
                     justifyContent='center' 
                     columnGap={ 200 } 

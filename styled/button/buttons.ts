@@ -18,3 +18,24 @@ export const Button = styled.button`
     padding: 20px 0;
     border-radius: 40px;
 `
+
+export const ButtonSecondary = styled.button`
+    background: transparent;
+    border: none; 
+    padding: 0;
+    color: ${ ({ color }: { color?: string }) => color ? color : "#fff" };
+    transition: all ease 0.2s;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    padding-bottom: 6px;
+    border-bottom: 1px solid ${ ({ color }) => color ? color : "#fff" };
+
+    &:hover {
+        color: #fff;
+        transition: all ease 0.2s;
+        border-bottom: 1px solid #fff;
+    }
+`

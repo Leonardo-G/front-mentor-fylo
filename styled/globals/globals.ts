@@ -4,7 +4,7 @@ import styled from "styled-components";
 //Se puede utilizar las clases en cualquier nodo hijo
 export const StyleGlobals = styled.div`
     .container {
-        width: min( 95%, 1440px );
+        width: min( 95%, 1240px );
         margin: 0 auto;
     }
 `
@@ -13,7 +13,7 @@ export const StyleGlobals = styled.div`
 export const Section = styled.section`
     position: relative;
     background: ${ ({ background }: { background?: string }) => background ? background : "transparent" };
-    padding: 150px 0;
+    padding: 100px 0;
 
     @media (max-width: 480px){
         padding: 50px 0;

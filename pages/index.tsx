@@ -8,9 +8,10 @@ import { Box, Flex } from '@/styled/box/box'
 import { TextMain } from '@/styled/text/text'
 import { Text } from '@/styled/text/text';
 import { Button } from '@/styled/button/buttons'
-import { Features } from '@/components/features/Features'
+import { Features } from '@/components/sections/Features'
 import { Section } from '@/styled/globals/globals'
 import { Position } from '@/styled/position/position'
+import { HowWork } from '@/components/sections/HowWork'
 
 
 const HomePage: NextPage = () => {
@@ -71,6 +72,7 @@ const HomePage: NextPage = () => {
             <Box>
                 <Features />
             </Box>
+            <HowWork />
         </LayoutPage>
     )
 }
