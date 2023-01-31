@@ -14,13 +14,17 @@ export const Box = styled.div`
         mt?: number;               //MARGIN-TOP
         mx?: number;               
         center?: boolean; 
-        widthResponsive?: boolean;         
+        widthResponsive?: boolean; 
+        minWidth?: string;
+        flexAuto?: boolean;
     }) => background ? background : "transparent" };
     margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
     height: ${ ({ height }) => height ? height : "100%" };
-    width: ${ ({ width }) => width ? width : "100%"};
-    
+    width: ${ ({ width }) => width ? width : "fit-content"};
+    min-width: ${ ({ minWidth }) => minWidth ? minWidth : "auto" };
+    flex: ${ ({ flexAuto }) => flexAuto ? 1 : "none" };
+
     @media (max-width: 720px){
         ${ ({ xm }) => xm ? xm : "" };
     }
@@ -47,6 +51,7 @@ export const Flex = styled.div`
         justifyContent?: "space-between" | "space-around" | "center";
         alignItems?: "center";
         width?: string;
+        wrap?: boolean;
     }) => direction ? "column" : "row" };
     row-gap: ${ ({ rowGap, gap }) => gap ? `${ gap }px` : rowGap ? `${ rowGap }px` : "0px" };
     column-gap: ${ ({ columnGap, gap }) => gap ? `${ gap }px` : columnGap ? `${ columnGap }px` : "0px" };
@@ -54,6 +59,7 @@ export const Flex = styled.div`
     align-items: ${ ({ alignItems }) => alignItems ? alignItems : "none" };
     width: ${ ({ width }) => width ? width : "fit-content" };
     height: 100%;
+    flex-wrap: ${ ({ wrap }) => wrap ? "wrap" : "auto" };
 
     @media (max-width: 720px){
         row-gap: ${ ({ rowGapXM, rowGap, gap }) => rowGapXM ? `${ rowGapXM }px` : gap ? `${ gap }px` : rowGap ? `${ rowGap }px` : "0px" };

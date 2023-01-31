@@ -12,6 +12,7 @@ import { Features } from '@/components/sections/Features'
 import { Section } from '@/styled/globals/globals'
 import { Position } from '@/styled/position/position'
 import { HowWork } from '@/components/sections/HowWork'
+import { Comments } from '@/components/sections/Comments'
 
 
 const HomePage: NextPage = () => {
@@ -73,6 +74,7 @@ const HomePage: NextPage = () => {
                 <Features />
             </Box>
             <HowWork />
+            <Comments />
         </LayoutPage>
     )
 }
