@@ -21,7 +21,7 @@ export const Box = styled.div`
     margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
     height: ${ ({ height }) => height ? height : "100%" };
-    width: ${ ({ width }) => width ? width : "fit-content"};
+    width: ${ ({ width }) => width ? `min(${width}, 100%)` : "fit-content" };
     min-width: ${ ({ minWidth }) => minWidth ? minWidth : "auto" };
     flex: ${ ({ flexAuto }) => flexAuto ? 1 : "none" };
 
@@ -31,7 +31,7 @@ export const Box = styled.div`
     
     @media (max-width: 480px){
         ${ ({ xs }) => xs ? xs : "" };
-        width: ${ ({ widthResponsive, width }) => widthResponsive ? "100%" : width ? width : "fit-content" };
+        width: ${ ({ widthResponsive, width }) => widthResponsive ? "100%" : width ? `min(${width}, 100%)` : "fit-content" };
     }
 `
 

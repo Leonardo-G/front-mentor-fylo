@@ -13,6 +13,7 @@ import { Section } from '@/styled/globals/globals'
 import { Position } from '@/styled/position/position'
 import { HowWork } from '@/components/sections/HowWork'
 import { Comments } from '@/components/sections/Comments'
+import { Access } from '@/components/sections/Access'
 
 
 const HomePage: NextPage = () => {
@@ -75,6 +76,7 @@ const HomePage: NextPage = () => {
             </Box>
             <HowWork />
             <Comments />
+            <Access />
         </LayoutPage>
     )
 }
