@@ -66,6 +66,10 @@ export const Title = styled.h3`
     font-family: "Raleway", sans-serif;
 
     @media (max-width: 720px){
-        font-size: ${ ({ size, sizeXM }) => sizeXM ? `${sizeXM}px` : size ? `${size}px` : "20px" }
+        font-size: ${ ({ size, sizeXM }) => sizeXM ? `${sizeXM}px` : size ? `${size}px` : "20px" };
+    }
+
+    @media (max-width: 480px){
+        font-size: ${ ({ size, sizeXS, sizeXM }) => sizeXS ? `${sizeXS}px` : sizeXM ? `${sizeXM}px` : size ? `${size}px` : "20px" };
     }
 `

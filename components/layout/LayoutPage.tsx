@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { Box } from '../../styled/box/box';
 import { Nav } from '../nav/Nav';
+import { Footer } from '../sections/Footer';
 
 interface Props {
     children: ReactNode;
@@ -21,6 +22,7 @@ const LayoutPage: FC<Props> = ({ children }) => {
                     { children }
                 </main>
                 <footer>
+                    <Footer />
                 </footer>
             </Box>
         </StyleGlobals>

@@ -17,13 +17,21 @@ export const Box = styled.div`
         widthResponsive?: boolean; 
         minWidth?: string;
         flexAuto?: boolean;
+        flex?: number;
+        transform?: string;
+        shadow?: string;
+        borderRadius?: string;
+        border?: string;
     }) => background ? background : "transparent" };
     margin: ${ ({ mt, center }) => mt && center ? `${ mt }px auto 0 auto` : center ? "0 auto" : mt ? `${ mt }px 0 0 0` : "0px" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
     height: ${ ({ height }) => height ? height : "100%" };
     width: ${ ({ width }) => width ? `min(${width}, 100%)` : "fit-content" };
     min-width: ${ ({ minWidth }) => minWidth ? minWidth : "auto" };
-    flex: ${ ({ flexAuto }) => flexAuto ? 1 : "none" };
+    flex: ${ ({ flexAuto, flex }) => flexAuto ? 1 : flex ? flex : "none" };
+    transform: ${ ({ transform }) => transform ? transform : "none" };
+    border-radius: ${ ({ borderRadius }) => borderRadius ? borderRadius : "none" };
+    border: ${ ({ border }) => border ? border : "none" };
 
     @media (max-width: 720px){
         ${ ({ xm }) => xm ? xm : "" };

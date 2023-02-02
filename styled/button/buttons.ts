@@ -7,11 +7,13 @@ export const Button = styled.button`
     background: ${ ({ background }: {
         background?: string;
         width?: number;
+        flex?: number;
     }) => background ? background : "transparent" };
+    flex: ${ ({ flex }) => flex ? flex : "none" };
     color: #fff;
     z-index: 1;
     border: none;
-    width: ${ ({ width }) => width ? `min(${ width }px, 95%)` : "fit-content" };
+    width: ${ ({ width }) => width ? `min(${ width }px, 100%)` : "fit-content" };
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
