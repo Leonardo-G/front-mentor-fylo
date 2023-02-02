@@ -57,6 +57,7 @@ const HomePage: NextPage = () => {
                                 <Button 
                                     width={ 290 } 
                                     background='hsl(198, 60%, 50%)'
+                                    hover='hsl(176, 68%, 64%)'
                                 >Get Started</Button>
                             </Flex>
                         </Box>

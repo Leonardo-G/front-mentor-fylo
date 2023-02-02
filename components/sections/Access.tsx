@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Box, Flex } from '@/styled/box/box'
-import { Section } from '@/styled/globals/globals'
 import { Text, Title } from '@/styled/text/text'
 import { Button } from '@/styled/button/buttons'
 import { Input } from '@/styled/input/input'
 
 export const Access = () => {
+
+    const [emailValue, setEmailValue] = useState("");
+    const [error, setError] = useState(false);
+
+    const handleClickEmail = () => {
+        const testEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    
+        if ( !testEmail.test( emailValue ) ) {
+            setError( true );
+            return;
+        }
+
+        setError( false );
+    }
+
     return (
         <Box background='hsl(218, 28%, 13%)' width='100%'>
             <Box className='container'>
@@ -25,9 +39,32 @@ export const Access = () => {
                         padding='30px 0'
                     >It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</Text>
                     <Flex width='100%' columnGap={ 40 } directionResponsive rowGap={ 30 }>
-                        <Input type="email" placeholder="email@example.com"/>
-                        <Button flex={ 1 } width={ 900 } background='hsl(176, 68%, 64%)'>Get Started For Free</Button>
+                        <Input 
+                            type="email" 
+                            placeholder="email@example.com"
+                            value={ emailValue } 
+                            onChange={ (e) => setEmailValue( e.target.value ) }   
+                        />
+                        <Button 
+                            flex={ 1 } 
+                            width={ 900 } 
+                            background='hsl(198, 60%, 50%)'
+                            hover='hsl(176, 68%, 64%)'
+                            onClick={ handleClickEmail }
+                        >Get Started For Free</Button>
                     </Flex>
+                    {
+                        error ?
+                            <Text 
+                                colorText='hsl(0, 100%, 63%)'
+                                padding='0 0 0 20px'
+                            >Please enter a valid email address</Text>
+                        :
+                            <Text
+                                colorText='hsl(134.9206349206349, 100%, 62.94117647058823%)'
+                                padding='0 0 0 20px'
+                            >Email sent</Text>
+                    }
                 </Box>
             </Box>
         </Box>

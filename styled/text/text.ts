@@ -3,16 +3,30 @@ import styled from "styled-components";
 //ESTILO PARA TEXTOS
 export const Text = styled.p`
     font-size: ${ ({ size }: { 
-        xm?: {}, xs?: {}, size?: number, padding?: string, font?: "Raleway" | "Open Sans", pointer?: boolean;
+        xm?: {}; 
+        xs?: {};
+        size?: number;
+        padding?: string;
+        font?: "Raleway" | "Open Sans";
+        pointer?: boolean;
         center?: boolean;  
         sizeXM?: number;  
         sizeXS?: number;
+        hover?: string;
+        colorText?: string;
     }) => size ? `${ size }px` : "16px" };
+    color: ${ ({ colorText }) => colorText ? colorText : "#fff" };
     padding: ${ ({ padding }) => padding ? padding : "0px" };
     font-family: ${ ({ font }) => `${font ? font : "Open Sans"}, sans-serif` };
     cursor: ${ ({ pointer }) => pointer ? "pointer" : "text" };
     text-align: ${ ({ center }) => center ? "center" : "none" };
     z-index: 1;
+
+    &:hover{
+        color: ${ ({ hover }) => hover ? hover : "#fff" };
+        text-decoration: ${ ({ colorText }) => colorText ? "underline" : "none" };
+    }
+
     @media (max-width: 720px){
         ${ ({ xm }) => xm ? xm : "" };
         font-size: ${ ({ sizeXM, size }) => sizeXM ? `${sizeXM}px` : size ? `${size}px` : "14px" };

@@ -29,6 +29,7 @@ export const Nav = () => {
                         font='Raleway' 
                         padding='0 30px' 
                         pointer
+                        colorText='#c7c6c6'
                         xs={{
                             "padding": "0 12.5px"
                         }}
@@ -37,6 +38,7 @@ export const Nav = () => {
                         font='Raleway' 
                         padding='0 30px' 
                         pointer
+                        colorText='#c7c6c6'
                         xs={{
                             "padding": "0 12.5px"
                         }}
@@ -45,6 +47,7 @@ export const Nav = () => {
                         font='Raleway' 
                         padding='0 30px' 
                         pointer
+                        colorText='#c7c6c6'
                         xs={{
                             "padding": "0 12.5px"
                         }}

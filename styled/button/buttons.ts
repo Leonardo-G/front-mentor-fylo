@@ -8,6 +8,7 @@ export const Button = styled.button`
         background?: string;
         width?: number;
         flex?: number;
+        hover?: string;
     }) => background ? background : "transparent" };
     flex: ${ ({ flex }) => flex ? flex : "none" };
     color: #fff;
@@ -19,6 +20,12 @@ export const Button = styled.button`
     font-size: 16px;
     padding: 20px 0;
     border-radius: 40px;
+    transition: ease all .2s;
+    
+    &:hover{
+        background: ${ ({ hover, background }) => hover ? hover : background };
+        transition: ease all .2s;
+    }
 `
 
 export const ButtonSecondary = styled.button`

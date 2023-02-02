@@ -16,7 +16,7 @@ export const Footer = () => {
                     width='150px'
                     height='40px'
                     responsiveXS={{
-                        width: "80px"
+                        width: "120px"
                     }}
                 />
                 <Box padding='40px 0'>
