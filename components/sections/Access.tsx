@@ -9,6 +9,7 @@ export const Access = () => {
 
     const [emailValue, setEmailValue] = useState("");
     const [error, setError] = useState(false);
+    const [send, setSend] = useState(false);
 
     const handleClickEmail = () => {
         const testEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -17,7 +18,7 @@ export const Access = () => {
             setError( true );
             return;
         }
-
+        setSend( true );
         setError( false );
     }
 
@@ -59,7 +60,7 @@ export const Access = () => {
                                 colorText='hsl(0, 100%, 63%)'
                                 padding='0 0 0 20px'
                             >Please enter a valid email address</Text>
-                        :
+                        :   !error && send &&
                             <Text
                                 colorText='hsl(134.9206349206349, 100%, 62.94117647058823%)'
                                 padding='0 0 0 20px'
