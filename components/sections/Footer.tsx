@@ -10,7 +10,7 @@ import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-sv
 export const Footer = () => {
     return (
         <Box background='hsl(216, 53%, 9%)' width='100%'>
-            <Box className='container' padding='200px 0 30px 0'>
+            <Box className='container' padding='200px 0 30px 0' xs={{ padding: "250px 0 30px 0" }}>
                 <ImageContainer 
                     src='./img/logo.svg'
                     width='150px'
@@ -20,7 +20,14 @@ export const Footer = () => {
                     }}
                 />
                 <Box padding='40px 0'>
-                    <Flex columnGap={ 60 } rowGap={ 50 } wrap justifyContent='center'>
+                    <Flex 
+                        columnGap={ 60 } 
+                        columnGapXS={ 20 } 
+                        rowGap={ 50 } 
+                        wrap 
+                        justifyContent='center'
+                        directionResponsive
+                    >
                         <Box flex={ 1.7 }>
                             <Flex columnGap={ 20 }>
                                 <ImageContainer 
@@ -63,21 +70,21 @@ export const Footer = () => {
                             </Flex>
                         </Box>
                         <Box flexAuto>
-                            <Flex columnGap={ 60 }>
-                                <Flex direction='column'>
+                            <Flex columnGap={ 60 } directionResponsive rowGap={ 35 }>
+                                <Flex direction='column' rowGap={ 10 }>
                                     <Text>About Us</Text>
                                     <Text>Jobs</Text>
                                     <Text>Press</Text>
                                     <Text>Blog</Text>
                                 </Flex>
-                                <Flex direction='column'>
+                                <Flex direction='column' rowGap={ 10 }>
                                     <Text>Contact Us</Text>
                                     <Text>Terms</Text>
                                     <Text>Privacy</Text>
                                 </Flex>
                             </Flex>
                         </Box>
-                        <Box flexAuto center>
+                        <Box flexAuto>
                             <Flex columnGap={ 20 } width='100%' justifyContent='center'>
                                 <Box borderRadius='50%' border='1px solid #fff' padding='10px'>
                                     <FontAwesomeIcon icon={ faFacebookF } color="#fff" size='xl'/>

@@ -17,6 +17,7 @@ export const Access = () => {
                     background='hsl(217, 28%, 15%)'
                     transform='translateY(40%)'
                     borderRadius='15px'
+                    xs={{ padding: "50px 20px 30px 20px" }}
                 >
                     <Title size={ 40 } sizeXS={ 25 } center>Get early access today</Title>
                     <Text 

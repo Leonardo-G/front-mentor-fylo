@@ -60,6 +60,7 @@ export const Flex = styled.div`
         alignItems?: "center";
         width?: string;
         wrap?: boolean;
+        xs?: {};
     }) => direction ? "column" : "row" };
     row-gap: ${ ({ rowGap, gap }) => gap ? `${ gap }px` : rowGap ? `${ rowGap }px` : "0px" };
     column-gap: ${ ({ columnGap, gap }) => gap ? `${ gap }px` : columnGap ? `${ columnGap }px` : "0px" };
@@ -75,6 +76,7 @@ export const Flex = styled.div`
     }
 
     @media (max-width: 480px){
+        ${ ({ xs }) => xs ? xs : "" };
         flex-direction: ${ ({ directionResponsive, direction }) => directionResponsive ? "column" : direction ? direction : "row" };
         column-gap: ${ ({ columnGapXS, columnGapXM, columnGap, gap }) => columnGapXS ? `${ columnGapXS }px` : columnGapXM ? `${ columnGapXM }px` : gap ? `${ gap }px` : columnGap ? `${ columnGap }px` : "0px" };
     }
